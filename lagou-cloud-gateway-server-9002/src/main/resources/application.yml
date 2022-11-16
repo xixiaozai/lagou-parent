@@ -25,4 +25,3 @@ spring:
             - Path=/resume/**
           filters:
             - StripPrefix=1
-
