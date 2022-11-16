@@ -1,0 +1,27 @@
+server:
+  port: 9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://EurekaServerA:8761/eureka, http://EurekaServerB:8762/eureka
+  instance:
+    prefer-ip-address: true #使用IP注册
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+spring:
+  application:
+    name: lagou-cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: service-autodeliver-router #自定义的ID 保持唯一即可
+          uri: http://127.0.0.1:8096 #目标服务地址。自动投递微服务
+          # 动态路由： uri配置的应该是一个服务名称，而不应该是一个具体服务实例的地址
+          # gateway网关从服务注册中心获取实例信息然后负载到路由
+          predicates:
+            - Path=/autodeliver/**
+        - id: service-resume-router
+          uri: http://127.0.0.1:8081
+          predicates:
+            - Path=/resume/**
+          filters:
+            - StripPrefix=1

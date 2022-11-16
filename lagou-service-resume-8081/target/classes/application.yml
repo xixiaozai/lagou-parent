@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: lagou-service-resume
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.30.154.204:3306/book_test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: Rzx@1218
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ## 驼峰命名
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://EurekaServerA:8761/eureka, http://EurekaServerB:8762/eureka
+  instance:
+    prefer-ip-address: true #使用IP注册
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:1.0-SNAPSHOT

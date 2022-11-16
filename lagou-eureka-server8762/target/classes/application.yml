@@ -1,0 +1,15 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: lagou-cloud-eureka-server
+eureka:
+  instance:
+    hostname: EurekaServerB
+  client:
+    service-url: #客户端与eureka交互的地址，如果是集群需要写其他地址
+      defaultZone: http://EurekaServerA:8761/eureka
+    register-with-eureka: true #单机不用注册为false  注册到集群其他机器改为true
+    fetch-registry: true #自己的服务不需要获取服务信息，默认为true，设置为false
+
+
