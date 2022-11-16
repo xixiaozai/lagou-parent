@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableDiscoveryClient //开启服务发现
-@EnableCircuitBreaker //开启熔断机制
+//@EnableCircuitBreaker //开启熔断机制
 @EnableFeignClients // 开启feigns
 public class AutoDeliverApplication {
     public static void main(String[] args) {
