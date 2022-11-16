@@ -14,7 +14,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EntityScan("com.xu.pojo")
 @EnableDiscoveryClient
-@EnableEurekaClient
+//@EnableEurekaClient
 public class ResumeApplication8080 {
     public static void main(String[] args) {
         SpringApplication.run(ResumeApplication8080.class, args);

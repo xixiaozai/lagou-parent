@@ -28,6 +28,19 @@
         <version>2.1.6.RELEASE</version>
     </parent>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- sca -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <!-- web依赖 -->
         <dependency>

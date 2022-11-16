@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: lagou-service-resume
+  autoconfigure:
+    exclude: org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.30.156.97:8848 #nacos server配置地址
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://172.30.154.204:3306/book_test?useUnicode=true&characterEncoding=utf8
