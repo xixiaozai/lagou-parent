@@ -1,0 +1,24 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: lagou-cloud-config-server
+  cloud:
+    config:
+      server:
+        git: # 配置git信息
+          uri:  #配置文件路径
+          username: #git账号名
+          password: #git密码
+          search-paths: #搜索仓库名
+            - lagou-config-repo
+      #分支
+      label: master
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://EurekaServerA:8761/eureka, http://EurekaServerB:8762/eureka
+  instance:
+    prefer-ip-address: true #使用IP注册
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@

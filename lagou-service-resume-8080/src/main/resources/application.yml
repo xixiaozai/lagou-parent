@@ -3,17 +3,19 @@ server:
 spring:
   application:
     name: lagou-service-resume
-  autoconfigure:
-    exclude: org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 172.30.156.97:8848 #nacos server配置地址
+#  autoconfigure:
+#    exclude: org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 172.30.156.97:8848 #nacos server配置地址
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.30.154.204:3306/book_test?useUnicode=true&characterEncoding=utf8
+#    url: jdbc:mysql://172.30.154.204:3306/book_test?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.30.160:3306/lagou?useUnicode=true&characterEncoding=utf8
     username: root
-    password: Rzx@1218
+#    password: Rzx@1218
+    password: 123456
   jpa:
     show-sql: true
     database: mysql
@@ -28,3 +30,8 @@ eureka:
   instance:
     prefer-ip-address: true #使用IP注册
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+#分布式链路追踪
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: debug
+    org.springframework.cloud.sleuth: debug

@@ -30,6 +30,7 @@ public class ResumeController {
 
     @GetMapping("/openstate/{userId}")
     public Integer findDefaultByUserId(@PathVariable Long userId){
+        System.out.println("current  is " + port);
         return port;
     }
 }

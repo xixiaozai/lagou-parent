@@ -11,12 +11,15 @@
         <module>lagou-service-resume-8080</module>
         <module>lagou-service-resume-8081</module>
         <module>lagou-service-common</module>
-        <module>lagou-service-deliver</module>
+        <module>lagou-service-deliver-8090</module>
         <module>lagou-eureka-server8761</module>
         <module>lagou-eureka-server8762</module>
-        <module>lagou-hystrix-dashboard</module>
+        <module>lagou-hystrix-dashboard-9000</module>
         <module>lagou-cloud-hystrix-turbine-9001</module>
         <module>lagou-cloud-gateway-server-9002</module>
+        <module>lagou-service-deliver-8091</module>
+        <module>lagou-cloud-config-9006</module>
+        <module>lagou-zipkin-server</module>
     </modules>
     <!-- 父工程打包方式为pom -->
     <packaging>pom</packaging>
